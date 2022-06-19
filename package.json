@@ -1,0 +1,52 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,json}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint"
+    ],
+    "*.{css,less,scss}": [
+      "stylelint \"src/**/*.(less|scss|css)\" --fix"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "antd": "^4.21.3",
+    "classnames": "^2.3.1",
+    "react": "17.x",
+    "react-dom": "17.x",
+    "umi": "^3.5.26",
+    "umi-request": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.5.26",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "lint-staged": "^13.0.2",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "stylelint": "^14.9.1",
+    "stylelint-config-recess-order": "^3.0.0",
+    "yorkie": "^2.0.0"
+  }
+}
